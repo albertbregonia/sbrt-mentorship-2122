@@ -81,3 +81,4 @@ Most popular examples of stacks:
 - [Learn Golang Video](https://youtu.be/YS4e4q9oBaU)
 - [Go Examples](https://gobyexample.com/)
 - [Go Documentation](https://pkg.go.dev/std)
+- [Go Online IDE](https://go.dev/play/)
