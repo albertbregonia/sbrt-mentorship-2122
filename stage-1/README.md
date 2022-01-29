@@ -1,0 +1,1 @@
+# Stage 1 - Getting Started on the Frontend of the Video Chat App

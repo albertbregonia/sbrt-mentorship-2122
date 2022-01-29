@@ -1,0 +1,127 @@
+@font-face {
+    font-family: "Bold";
+    src: url("https://albertbregonia.us.to/font/Gravity-Bold.otf") format("opentype");
+}
+@font-face {
+    font-family: "Regular";
+    src: url("https://albertbregonia.us.to/font/Gravity-Regular.otf") format("opentype");
+}
+@font-face {
+    font-family: "Thin";
+    src: url("https://albertbregonia.us.to/font/Gravity-Light.otf") format("opentype");
+}
+@font-face {
+    font-family: "Italics";
+    src: url("https://albertbregonia.us.to/font/Gravity-LightItalic.otf") format("opentype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* https://coolors.co/161925-23395b-406e8e-8ea8c3-cbf7ed */
+    --foreground: #FFFFFF;
+    --foreground-0: #E5E5E5;
+    --background: #161925;
+    --background-0: #212941;
+    --accent: #8EA8C3;
+    --highlight: #CBF7ED;
+    color: var(--foreground);
+    overflow: hidden;
+    font-family: Regular;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background);
+    position: relative;
+}
+
+#clock {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 10px; left: 0; right: 0;
+    margin: auto;
+    font-family: Thin;
+}
+
+#videos {
+    width: 100%;
+    height: 100%;
+}
+
+#chat {
+    z-index: 1;
+    background-color: var(--background-0);
+    width: 300px;
+    height: calc(100% - 20px);
+    border-radius: 20px;
+
+    margin: 10px;
+    position: fixed;
+    top: 0; right: -280px;
+
+    transition: right ease-in-out 250ms 250ms;
+}
+
+@media screen and (max-width: 300px) {
+    #chat {
+        width: calc(100% - 20px);
+        height: 50vh;
+        position: fixed;
+        top: calc(100vh - 40px);
+        left: 0; right: 0;
+        transition: top ease-in-out 250ms;
+    }
+    #chat:hover {
+        top: calc(50vh - 20px);
+    }
+}
+
+@keyframes flash-border {
+    0% {
+        box-shadow: 0 0 10px 0 var(--accent);
+    }
+    50% {
+        box-shadow: 0 0 10px 5px var(--accent);
+    }
+    100% {
+        box-shadow: 0 0 10px 0 var(--accent);
+    }
+}
+
+#chat:hover {
+    right: 0;
+    animation: flash-border 500ms infinite;
+}
+
+#chat-log {
+    list-style: none;
+    overflow: auto;
+    height: 90%;
+}
+
+#chat-log li {
+    margin: 10px;
+    padding: 10px;
+    border-bottom: 1px solid var(--foreground-0);
+}
+
+#chat form {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#chat-input {
+    background-color: transparent;
+    border-radius: 10px;
+    height: 30px;
+    outline: none;
+    color: var(--foreground)
+}
