@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --foreground: #FFFFFF;
+    --background: #0E1116;
+    --background-0: #374A67;
+    --accent: #616283;
+    --highlight: #CB9CF2;
+}
+
+body {
+    background-color: var(--background);
+}
+
+#login-menu {
+    background-color: var(--background-0);
+    padding: 25px;
+    width: 350px;
+    height: 200px;
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    animation: spin 500ms infinite;
+    transition: all ease-in-out 250ms;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    0% {
+        box-shadow: 0 -10px 10px 5px var(--accent);
+    }
+    25% {
+        box-shadow: 10px 0 10px 5px var(--accent);
+    }
+    50% {
+        box-shadow: 0 10px 10px 5px var(--accent);
+    }
+    75% {
+        box-shadow: -10 0 10px 5px var(--accent);
+    }
+    100% {
+        box-shadow: 0 -10px 10px 5px var(--accent);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #login-menu {
+        width: 200px;
+        height: 150px;
+    }
+}
