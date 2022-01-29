@@ -13,8 +13,10 @@
         <br> <!-- \n -->
         <input type="password" placeholder="Password" required>
         <br>
-        <button>Log In</button>
-        <input type="button" value="Sign Up" onclick="alert('signed up');">
+        <div> <!-- moved this into a div so that it won't be affected by flex-drection: column -->
+            <button>Log In</button>
+            <input type="button" value="Sign Up" onclick="alert('signed up');">
+        </div>
     </form>
 </body>
 </html>
